@@ -1,0 +1,6 @@
+Utilizar a linguagem Java para responder: 
+
+1. Para coluna "raisedAmt" listar: total, média, max, min e mediana
+2. Exibir valores "raisedAmt" agrupados por "state"
+4. Contar ocorrências de "company" e exibir a média de "raisedAmt"
+5. Para as ocorrências de "numEmps" calcular a média de "raisedAmt" por empregado 
