@@ -29,7 +29,7 @@ public class Row {
 	}
 
 	private void setPermalink(String permalink) {
-		this.permalink = permalink;
+		this.permalink = permalink.trim();
 	}
 
 	public String getCompany() {
@@ -37,7 +37,7 @@ public class Row {
 	}
 
 	private void setCompany(String company) {
-		this.company = company;
+		this.company = company.trim();
 	}
 
 	public int getNumEmps() {
@@ -61,7 +61,7 @@ public class Row {
 	}
 
 	private void setCategory(String category) {
-		this.category = category;
+		this.category = category.trim();
 	}
 
 	public String getCity() {
@@ -69,7 +69,7 @@ public class Row {
 	}
 
 	private void setCity(String city) {
-		this.city = city;
+		this.city = city.trim();
 	}
 
 	public String getState() {
@@ -77,7 +77,7 @@ public class Row {
 	}
 
 	private void setState(String state) {
-		this.state = state;
+		this.state = state.trim();
 	}
 
 	public float getRaisedAmt() {
@@ -101,7 +101,7 @@ public class Row {
 	}
 
 	private void setRaisedCurrency(String raisedCurrency) {
-		this.raisedCurrency = raisedCurrency;
+		this.raisedCurrency = raisedCurrency.trim();
 	}
 
 	public String getRound() {
@@ -109,6 +109,6 @@ public class Row {
 	}
 
 	private void setRound(String round) {
-		this.round = round;
+		this.round = round.trim();
 	}
 }

@@ -5,7 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.DoubleSummaryStatistics;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Report {
 	private ArrayList<Row> rows = new ArrayList<Row>();
@@ -39,7 +42,22 @@ public class Report {
 	}
 	
 	public float getRaisedAmtMedian() {
-		return 0;
+		int middle = this.rows.size() / 2;
+		if(this.rows.size() % 2 == 0) {
+			return (this.rows.get(middle -1).getRaisedAmt() + this.rows.get(middle).getRaisedAmt()) /2;
+		} else {
+			return this.rows.get(middle).getRaisedAmt();
+		}
+	}
+	
+	public Map<String, Double> getStateRaisedAmt() {
+		return rows.stream()
+				.collect(Collectors.groupingBy(row -> row.getState(), Collectors.summingDouble(Row::getRaisedAmt)));
+	}
+
+	public Map<String, Double> getCompanyRaisedAmtAverage() {
+		return rows.stream()
+				.collect(Collectors.groupingBy(row -> row.getCompany(), Collectors.averagingDouble(Row::getRaisedAmt)));
 	}
 	
 	public void loadCsv(String file, String csvSplitBy) {
